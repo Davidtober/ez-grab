@@ -1,0 +1,18 @@
+#:kivy 1.1.0
+
+
+BoxLayout:
+    size: root.size
+    pos: root.pos
+    orientation: "vertical"
+    FileChooserIconView:
+        id: filechooser
+        path: "~"
+
+    BoxLayout:
+        size_hint_y: None
+        height: 30
+
+        Button:
+            text: "Load"
+            on_release: app.load(filechooser.path, filechooser.selection)
